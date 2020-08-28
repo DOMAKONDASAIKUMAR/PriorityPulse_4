@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-
+import ReactDOM from 'react-dom'
 import { Route, Redirect, Switch } from "react-router-dom";
-import Home from "./Components/Home"
-import Head from "./Components/Header"
-import Working from './Components/Working'
-import Section from './Components/Section'
+
 import Foot from './Components/Foot'
+import Profile from "./Components/Profile";
+import Home from './Components/Home'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab,} from '@fortawesome/free-brands-svg-icons'
+library.add(fab )
 class App extends Component {
   render() {
     return (
@@ -14,18 +17,18 @@ class App extends Component {
           minHeight:"100vh",
           display: "flex",
           flexDirection: "column",
-        backgroundColor:"#fdfdfd"
+      
         }}>
-           <Head></Head>
+          
           <Switch>
          
-            <Route path="/home" component={Home} /> 
-             {/* <Route path="/activeRides" component={ActiveRides} />
-            <Route path="/profile" component={Profile} />  */}
-            <Redirect to="/home" />
+            <Route path="/Profile" component={Profile} /> 
+            
+             <Route path="/Home" component={Home} />  
+            <Redirect to="/Profile" />
           </Switch> 
-          <Foot></Foot>
          
+          <Foot></Foot>
        
             </main>
             

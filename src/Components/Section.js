@@ -3,10 +3,9 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import map from "../Images/maps.jpg"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import "../css/Section.css"
 import Media from "react-media"
-import { faCircle, faHospital } from '@fortawesome/free-solid-svg-icons'
 import { Table } from 'reactstrap'
 
 function Section() {
@@ -45,31 +44,13 @@ function Section() {
         color:"#E89F9F"
     }
     return (
-        <div style={{backgroundColor:"#2F303a"}}>
+        <div style={{backgroundColor:"#2F303a",overflow:"auto"}}>
             <Container fluid className=" " >
                 <Row className=" ml-4 mr-3 ">
                     <Col lg={7} xs={12} className="pt-4"><img src={map} style={maps}></img></Col>
                     <Col lg={5} xs={12} className="det pt-4 px-md-4">
                     
-                       {/* <h4 style={{ color: "#A6BFDD", display: "inline" }} className=""><Media query={{ maxWidth: 599 }}>
-          {matches =>
-            matches ? (
-                                    <span>Active<br/>Rides</span>
-            ) : (
-              `Active Rides`
-            )
-          }
-        </Media> <span style={{ position: "absolute", right: "9%" }}> 
-                        <Media query={{ maxWidth: 599 }}>
-          {matches =>
-            matches ? (
-                <span style={{position:"absolute",bottom:"-27px",right:"20px"}}>Hospital<br/>Name</span>
-            ) : (
-              `Hospital Name`
-            )
-          }
-        </Media>
-                            </span></h4> */}
+                    
                         <Container style={{
                             marginTop: "auto", marginBottom: "auto"}}>
                             <Table borderless className="table-fixed mb-0" ><thead>
@@ -121,34 +102,28 @@ function Section() {
     </tr>
    
  */}
-
-
-          </tbody>
-                                    
-    </Table></div>
-    </Container>
-
-                          
-                    </Col>
-                </Row>
-                <Row className=" ml-4 mr-3 mb-3 " style={{color:"white",paddingBottom:"3vh",paddingTop:"15px"}}>
-                    <Col xs={12} md={6} xl={3} className='px-3 py-4 pr-5'>
-                        <div >
-                            <h4 style={{color:"#A6BFDD"}} className="pb-2">Hospital Details</h4>
-                            <h2>{Hospital.name}</h2>
-                            <h6>{Hospital.place}</h6>
-                            <div className="d-flex " >
-                                <h5>Contact </h5>
-                                <h5 className="pr-4 pl-2">:</h5>
-                                <h5>{Hospital.number}</h5>
-                            </div>
-                            <div className="d-flex " >
-                                <h5>Address  </h5>
-                                <h5 className="pr-4 pl-2"> :</h5>
-                                <h5>{Hospital.address}</h5>
-                        </div>
-                            
-                        </div>
+                 </tbody>                     
+          </Table></div>
+       </Container>
+    </Col>
+</Row>
+ <Row className=" ml-4 mr-3 mb-3 " style={{color:"white",paddingBottom:"3vh",paddingTop:"15px"}}>
+          <Col xs={12} md={6} xl={3} className='px-3 py-4 pr-5'>
+                <div >
+                    <h4 style={{color:"#A6BFDD"}} className="pb-2">Hospital Details</h4>
+                     <h2>{Hospital.name}</h2>
+                    <h6>{Hospital.place}</h6>
+                    <div className="d-flex " >
+                     <h5>Contact </h5>
+                    <h5 className="pr-4 pl-2">:</h5>
+                    <h5>{Hospital.number}</h5>
+                 </div>
+                 <div className="d-flex " >
+                    <h5>Address  </h5>
+                    <h5 className="pr-4 pl-2"> :</h5>
+                    <h5>{Hospital.address}</h5>
+                </div>
+                  </div>
                     </Col>
                     <Col xs={12} md={6} xl={3} className="py-4 px-4">
                     <div>
