@@ -7,18 +7,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../css/Section.css"
 import Media from "react-media"
 import { faCircle, faHospital } from '@fortawesome/free-solid-svg-icons'
+import { Table } from 'reactstrap'
 
 function Section() {
     const maps = {
         width: "100%",
-        height: "75vh",
+        maxHeight: "376px", minHeight:"200px",
         overflow: "hidden"
     }
-    const tb = {
-        position: "absolute", right: "12%", paddingTop: "2%", fontWeight: "500",
-        fontSize: "1.3rem", padding: "5px", border: "0"
-        
-    }
+   
     const [Hospital, setHospital] = useState({
         name: "Trama center",
         place: "Banaras hindu university,varanasi,UP",
@@ -43,21 +40,18 @@ function Section() {
     const [ar, Setar] = useState(['Trama Center', 'Sunderlal', 'Sunderlal', 'Trama Center', 'Sunderlal', 'Trama center'])
     const [pn, Setpn] = useState(['Rajini', 'Nithish', 'Sudeep', 'Saikiran', 'Harish', 'Verma'])
 
-    const tr = {
-        fontWeight:"500",
-        fontSize:"1.3rem",padding:"5px",border:"0"
-    }
+    
     const im = {
         color:"#E89F9F"
     }
     return (
         <div style={{backgroundColor:"#2F303a"}}>
             <Container fluid className=" " >
-                <Row className=" ml-4 mr-3 pt-5">
-                    <Col lg={7} xs={12} className=""><img src={map} style={maps}></img></Col>
+                <Row className=" ml-4 mr-3 ">
+                    <Col lg={7} xs={12} className="pt-4"><img src={map} style={maps}></img></Col>
                     <Col lg={5} xs={12} className="det pt-4 px-md-4">
                     
-                       <h4 style={{ color: "#A6BFDD", display: "inline" }} className=""><Media query={{ maxWidth: 599 }}>
+                       {/* <h4 style={{ color: "#A6BFDD", display: "inline" }} className=""><Media query={{ maxWidth: 599 }}>
           {matches =>
             matches ? (
                                     <span>Active<br/>Rides</span>
@@ -75,23 +69,69 @@ function Section() {
             )
           }
         </Media>
-        </span></h4>
-         <table className="table table-striped table-lg mt-3">
-             <tbody >
-        <tr className="bg-success " style={{paddingTop:"0",position:"relative"}} ><td style={tr} className="">Rajini
-                                        </td><span style={tb} >{ar[0]}</span></tr>
-                                        <tr style={{color:"white",position:""}}><td style={tr}>{pn[0]} </td><span style={tb} >{ar[1]}</span></tr>
-                                        <tr  style={{backgroundColor:"#EAF0F1"}}><td style={tr}>{pn[1]} </td><span style={tb} >{ar[2]}</span></tr>
-                                        <tr style={{color:"white"}} ><td style={tr}>{pn[2]} </td><span style={tb} >{ar[3]}</span></tr>
-                                        <tr style={{backgroundColor: "#EAF0F1"}}><td style={tr}>{pn[3]} </td><span style={tb} >{ar[4]}</span></tr>
-                                        <tr style={{color:"white"}} className="d-flex"><td style={tr}>{pn[4]}</td><span style={tb} >{ar[5]}</span> </tr>
-                                    </tbody>
-                                   
-                            </table>
+                            </span></h4> */}
+                        <Container style={{
+                            marginTop: "auto", marginBottom: "auto"}}>
+                            <Table borderless className="table-fixed mb-0" ><thead>
+        <tr >
+          <th className="thd1" style={{width:"47%",fontSize:"1.5rem",color: "#A6BFDD"}}>Active Rides</th>
+          <th className="thd2 "style={{width:"50%",textAlign:"right",fontSize:"1.5rem",color: "#A6BFDD"}} >Hospital Name</th>
+        </tr>
+                                </thead></Table>
+                            <div className="tb">
+      <Table borderless className="table-fixed " >
+      
+    <tbody> 
+    <tr  className="frst ">
+   <td  className="" style={{ width: "70%" }} >{pn[0]}</td>
+  <td className="">{ar[0]}</td>
+    </tr>
+    <tr className="f1">
+          <td >{pn[1]}</td>
+          <td>{ar[1]}</td>
+    </tr>
+    <tr className="f2">
+          <td >{pn[2]}</td>
+          <td>{ar[2]}</td>
+     </tr>
+    <tr className="f1">
+          <td >{pn[3]}</td>
+          <td>{ar[3]}</td>
+    </tr>
+    <tr className="f2">
+          <td >{pn[4]}</td>
+          <td>{ar[4]}</td>
+    </tr>
+    <tr className="f1">
+          <td >{pn[5]}</td>
+          <td>{ar[5]}</td>
+          
+    </tr>
+    {/* <tr className="f2">
+          <td>3</td>
+          <td>Larry</td>
+    </tr>
+    <tr className="f1">
+          <td>3</td>
+          <td>Larry</td>
+    </tr>
+    <tr className="f2">
+          <td>3</td>
+          <td>Larry</td>
+    </tr>
+   
+ */}
+
+
+          </tbody>
+                                    
+    </Table></div>
+    </Container>
+
                           
                     </Col>
                 </Row>
-                <Row className=" ml-4 mr-3 mb-5 mt-5" style={{color:"white",paddingBottom:"13vh",paddingTop:"8vh"}}>
+                <Row className=" ml-4 mr-3 mb-3 " style={{color:"white",paddingBottom:"3vh",paddingTop:"15px"}}>
                     <Col xs={12} md={6} xl={3} className='px-3 py-4 pr-5'>
                         <div >
                             <h4 style={{color:"#A6BFDD"}} className="pb-2">Hospital Details</h4>

@@ -8,3 +8,28 @@ h4{
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.tb{
+    height: 150px;
+    overflow-y: scroll;
+}
+
+  .frst{
+      background-color: #46E642;
+
+  }
+  tbody{
+      font-size: 18px;
+  }
+ 
+  td {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+.f1{
+    color: #fafafa;
+}
+.f2{
+    color:rgba(0, 0, 0, 0.6);
+    background-color: #edf2f7;
+}
